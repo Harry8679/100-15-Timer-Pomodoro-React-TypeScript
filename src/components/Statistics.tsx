@@ -39,15 +39,15 @@ export const Statistics = ({ stats, onClose }: StatisticsProps) => {
               Aujourd'hui
             </h3>
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-red-500 to-pink-600 rounded-xl p-4 text-white">
+              <div className="bg-linear-to-br from-red-500 to-pink-600 rounded-xl p-4 text-white">
                 <div className="text-3xl font-bold mb-1">{pomodorosToday}</div>
                 <div className="text-sm opacity-90">Pomodoros</div>
               </div>
-              <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl p-4 text-white">
+              <div className="bg-linear-to-br from-green-500 to-teal-600 rounded-xl p-4 text-white">
                 <div className="text-3xl font-bold mb-1">{breaksToday}</div>
                 <div className="text-sm opacity-90">Pauses</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-4 text-white">
+              <div className="bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl p-4 text-white">
                 <div className="text-3xl font-bold mb-1">{Math.round(totalMinutesToday)}</div>
                 <div className="text-sm opacity-90">Minutes</div>
               </div>
