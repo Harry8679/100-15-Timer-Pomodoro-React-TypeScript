@@ -34,7 +34,7 @@ export const SessionSelector = ({
           disabled={disabled}
           className={`flex-1 px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
             currentSession === session
-              ? `bg-gradient-to-r ${getSessionColor(session)} text-white shadow-lg scale-105`
+              ? `bg-linear-to-r ${getSessionColor(session)} text-white shadow-lg scale-105`
               : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
           } ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'}`}
         >
@@ -43,7 +43,7 @@ export const SessionSelector = ({
       ))}
       
       {completedPomodoros > 0 && (
-        <div className="flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl font-bold shadow-lg">
+        <div className="flex items-center px-4 py-2 bg-linear-to-r from-purple-500 to-pink-600 text-white rounded-xl font-bold shadow-lg">
           🍅 {completedPomodoros}
         </div>
       )}
