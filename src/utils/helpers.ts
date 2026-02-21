@@ -6,6 +6,16 @@ export const formatTime = (seconds: number): string => {
   return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 };
 
+export const formatDate = (date: Date): string => {
+  return new Date(date).toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+};
+
 export const getSessionLabel = (type: SessionType): string => {
   const labels: Record<SessionType, string> = {
     pomodoro: 'Pomodoro',
@@ -70,9 +80,16 @@ export const isSameDay = (date1: Date, date2: Date): boolean => {
   );
 };
 
-export const playNotificationSound = (volume: number = 0.5) => {
+export const playNotificationSound = (volume: number = 0.5): void => {
   // Créer un son simple avec Web Audio API
-  const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+  const AudioContextClass = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  
+  if (!AudioContextClass) {
+    console.warn('Web Audio API not supported');
+    return;
+  }
+
+  const audioContext = new AudioContextClass();
   const oscillator = audioContext.createOscillator();
   const gainNode = audioContext.createGain();
 
