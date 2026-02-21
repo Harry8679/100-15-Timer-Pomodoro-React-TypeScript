@@ -27,7 +27,7 @@ export const Timer = ({ sessionType, timeLeft, totalTime }: TimerProps) => {
         }
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className={`text-8xl font-bold bg-gradient-to-r ${gradientClass} bg-clip-text text-transparent`}>
+        <div className={`text-8xl font-bold bg-linear-to-r ${gradientClass} bg-clip-text text-transparent`}>
           {formatTime(timeLeft)}
         </div>
       </div>
